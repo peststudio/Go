@@ -11,7 +11,7 @@ func Sqrt(x float64) float64 {
     for i := 0; i < 1000; i++ {
         z = z - (math.Pow(z,2) - x) / (z * 2)
         if z == math.Sqrt(x) {
-            fmt.Println("Number of Iterations ", i)
+            fmt.Println("Number of Iterations", i)
             return z
         }
     }
@@ -19,6 +19,6 @@ func Sqrt(x float64) float64 {
 }
 
 func main() {
-    fmt.Println("My Function returns ", Sqrt(17))
-    fmt.Println("math.Sqrt() returns ", math.Sqrt(17))
+    fmt.Println("My Function returns", Sqrt(17))
+    fmt.Println("math.Sqrt() returns", math.Sqrt(17))
 }
