@@ -21,6 +21,11 @@ func split(sum int) (x, y int) {
 	y = sum - x
 	return
 }
+type Pair struct {
+    X int
+    Y int
+}
+
 func main(){
 // use := without var dec
 	k := 3
@@ -49,4 +54,46 @@ func main(){
 		sum += sum
 	}
 	fmt.Println(sum)
+	if sum == 1 {
+	fmt.Println("sum is 1")
+	} else {
+	fmt.Println("sum is not 1")
+	}
+
+	//struct
+	v := Pair{1, 2}
+    	v.X = 4
+   	 v.Y = 5
+    	fmt.Println(Pair(v))
+
+	p := Pair{1, 2}
+   	q := &p
+    	q.X = 1e9
+    	fmt.Println(p)
+	
+    	p = Pair{1, 2}  // has type Vertex
+   	q = &Pair{1, 2} // has type *Vertex
+   	p = Pair{X: 1}  // Y:0 is implicit
+    	p = Pair{}      // X:0 and Y:0
+	
+	var a [2]string
+    	a[0] = "Hello"
+    	a[1] = "World"
+    	fmt.Println(a[0], a[1])
+    	fmt.Println(a)
+
+	r := []int{2, 3, 5, 7, 11, 13}
+    	fmt.Println("r ==", r)
+
+    	for i := 0; i < len(r); i++ {
+        	fmt.Printf("r[%d] == %d\n", i, r[i])
+    	}
+	b := make([]int, 0, 5) // len(b)=0, cap(b)=5
+	b = b[:cap(b)] // len(b)=5, cap(b)=5
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+	func main() {
+    		for i, v := range pow {
+       		fmt.Printf("2**%d = %d\n", i, v)
+    	}
 }
