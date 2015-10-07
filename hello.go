@@ -91,9 +91,17 @@ func main(){
 	b := make([]int, 0, 5) // len(b)=0, cap(b)=5
 	b = b[:cap(b)] // len(b)=5, cap(b)=5
 	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+	type Vertex struct {
+   		Lat, Long float64
+	}
 
+	var m = map[string]Vertex{
+    		"Bell Labs": {40.68433, -74.39967},
+    		"Google":    {37.42202, -122.08408},
+	}
 	func main() {
     		for i, v := range pow {
        		fmt.Printf("2**%d = %d\n", i, v)
+		fmt.Println(m)
     	}
 }
